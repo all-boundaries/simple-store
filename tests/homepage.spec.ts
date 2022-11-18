@@ -6,6 +6,7 @@ test('homepage shows basic info', async ({ page }) => {
     const header = page.getByText('Simple store');
     const intro = page.getByText('A place for you to find, learn and buy coffee.');
 
+    await expect(page).toHaveTitle('Simple store');
     await expect(header).not.toBeEmpty();
     await expect(intro).not.toBeEmpty();
 });
